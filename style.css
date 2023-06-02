@@ -28,14 +28,14 @@ body {
 }
 
 .logo__coffee {
-    margin-top: 20%;
+    margin-top: 2%;
     display: flex;
     justify-content: center;
     padding-top: 1rem;
     padding-bottom: 1rem;
     background-color: var(--cor-2);
-    font-size: 2rem;
-    align-items: baseline;
+    font-size: 4rem;
+    align-items: center;
 }
 
 .bem__vindo {
@@ -48,25 +48,27 @@ body {
 }
 
 .cadastro__bottom {
-    margin-top: 10rem;
+    margin-top: 5rem;
     margin-left: 28%;
     margin-right: 28%;
     display: flex;
     justify-content: center;
     margin-bottom: 5rem;
-    background-color: var(--cor-3);
+    background-color: var(--cor-2);
     font-size: 2rem;
+    border-radius: 4%;
 }
 
 .login__bottom {
-    margin-top: 4rem;
+    margin-top: 3rem;
     margin-left: 28%;
     margin-right: 28%;
     display: flex;
     justify-content: center;
     margin-bottom: 5rem;
-    background-color: var(--cor-3);
+    background-color: var(--cor-2);
     font-size: 2rem;
+    border-radius: 4%;
 }
 
 .main__cadastro__titulo {
@@ -108,4 +110,81 @@ body {
     background-color: var(--cor-2);
     padding: 1rem 5rem;
     margin-top: 7%;
+}
+
+.cardapio__titulo {
+    padding-top: 4vh;
+    padding-bottom: 4vh;
+    display: flex;
+    justify-content: center;
+    font-size: larger;
+    font-size: 2rem;
+    letter-spacing: 1vh;
+}
+
+.cardapio__geral {
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+}
+.cardapio__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.cardapio__geral img {
+    width: 10vh;
+    padding-bottom: 15%;
+}
+
+.button__item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: transparent;
+    border: none;
+}
+
+
+.botao__quant {
+    width: 66px;
+    height: 40px;
+    text-align: center;
+    font-size: 17px;
+}
+
+
+.total__carrinho {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+    font-size: 1rem;
+    background-color: var(--cor-3);
+    align-self: center;
+}
+
+
+.finaliza__pedido{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    margin-top: 2rem;
+    font-size: 1rem;
+    background-color: var(--cor-3);
+    align-self: center;
+}
+
+.footer__final {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.entrega {
+    margin-top: 20px;
+    display: flex;
+      justify-content: center;
+      align-items: center;
+
 }

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CoffeeTech</title>
+    <link rel="stylesheet" href="style.css">
+    <script async src="loja.js"></script>
+
+</head>
+
+<body>
+    <header class="logo__coffee">CoffeeTech<img src="assets/logo_coffe.png" alt="logo" width="10%"></header>
+    <nav class="cardapio__titulo">
+        <h3>Cardápio</h3>
+    </nav>
+    <main class="cardapio__geral">
+        <div class="cardapio__section__cafe">
+
+            <figure class="cardapio__item">
+                <label class="button__item" id="cappuccino">
+                    <img src="assets/cappuccino.png" alt="Cappuccino">
+                    <figcaption>Cappuccino <br><strong>R$ 7,00</strong></figcaption>
+
+                </label>
+
+            </figure>
+
+            <figure class="cardapio__item">
+                <label class="button__item" id="expresso">
+                    <img src="assets/expresso.png" alt="Café expresso">
+                    <figcaption>Café Expresso <br><strong>R$ 5,90</strong></figcaption>
+
+                </label>
+            </figure>
+
+            <figure class="cardapio__item">
+                <label class="button__item" id="miniexpresso">
+                    <img src="assets/logo_coffe.png" alt="Café expresso">
+                    <figcaption>Cafézinho Expresso <br><strong>R$ 2,50</strong></figcaption>
+
+                </label>
+            </figure>
+
+        </div>
+
+        <div class="cardapio__section__paes">
+
+            <figure class="cardapio__item">
+                <label class="button__item" id="bolo">
+                    <img src="assets/bolo.png" alt="Bolo">
+                    <figcaption>Fatia de Bolo <br><strong>R$ 2,00</strong></figcaption>
+
+                </label>
+            </figure>
+
+            <figure class="cardapio__item">
+                <label class="button__item" id="pao1">
+                    <img src="assets/pao1.png" alt="Pão 1">
+                    <figcaption>Pão 1 <br><strong>R$ 0,50</strong></figcaption>
+
+                </label>
+            </figure>
+
+            <figure class="cardapio__item">
+                <label class="button__item" id="pao2" value="0.75">
+                    <img src="assets/pao2.png" alt="Pão 2">
+                    <figcaption>Pão 2 <br><strong>R$ 0,75</figcaption>
+
+                </label>
+            </figure>
+        </div>
+
+    </main>
+
+    <footer class="footer__final">
+        <div class="total__carrinho">TOTAL: <br> R$ XXXX,XX</div>
+        <div class="entrega">
+            <label>
+                <input type="radio" name="opcao" value="retirada" checked>
+                Retirada
+              </label>
+            
+              <label>
+                <input type="radio" name="opcao" value="entrega">
+                Entrega
+              </label>
+        </div>
+        <div class="finaliza__pedido">
+            <h3><a href="meuspedidos.html">FINALIZAR PEDIDO</a></h3>
+        </div>
+    </footer>
+</body>
+
+</html>
