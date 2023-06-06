@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+a {
+    color: inherit;
+}
+
+
+:root {
+    --cor-base: #f2d7b6;
+    --cor-1: #2C302E;
+    --cor-2: #A1683A;
+    --cor-3: #808A9F;
+    --cor-4: #5448C8;
+    --fonte-base: 'Roboto', sans-serif;
+}
+
+body {
+    background-color: #f2d7b6;
+    font-family: var(--fonte-base);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+
+}
+
+.logo__coffee {
+    margin-top: 2%;
+
+    display: flex;
+    justify-content: center;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    background-color: var(--cor-2);
+    font-size: 3rem;
+    align-items: center;
+}
+
+.table-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  .table-button.window {
+    background-color: #808A9F;
+  }
+  .table-button.no-window {
+    background-color: #A1683A;
+  }
+  .selected {
+    background-color: yellow;
+  }
+  .calendar {
+    margin-left: 20%;
+    margin-top: 20px;
+  }
+  .calendar table {
+    border-collapse: collapse;
+  }
+  .calendar th,
+  .calendar td {
+    padding: 5px;
+    text-align: center;
+  }
+  .calendar th {
+    background-color: #f2f2f2;
+  }
+  .calendar td {
+    cursor: pointer;
+  }
+  .calendar td.disabled {
+    color: #ccc;
+    cursor: not-allowed;
+  }

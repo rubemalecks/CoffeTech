@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CoffeeTech</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .rating {
+            font-size: 24px;
+        }
+
+        .rating span {
+            display: inline-block;
+            cursor: pointer;
+            color: gray;
+        }
+
+        .rating span:hover,
+        .rating span.selected {
+            color: gold;
+        }
+
+        textarea {
+            width: 300px;
+            height: 100px;
+        }
+
+        button {
+            margin-top: 10px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <header class="logo__coffee">CoffeeTech<img src="assets/logo_coffe.png" alt="logo" width="10%"></header>
+    <nav></nav>
+    <main class="servicos__all">
+        <h1>Avalie nosso atendimento</h1>
+
+        <h2>Por favor, selecione sua classificação</h2>
+        <div class="rating">
+            <span class="star" data-rating="1">&#9733;</span>
+            <span class="star" data-rating="2">&#9733;</span>
+            <span class="star" data-rating="3">&#9733;</span>
+            <span class="star" data-rating="4">&#9733;</span>
+            <span class="star" data-rating="5">&#9733;</span>
+        </div>
+
+        <h2>Deixe um comentário</h2>
+        <textarea id="comment" placeholder="Digite seu comentário aqui"></textarea>
+
+        <button id="submit">Enviar avaliação</button>
+        <button class="button__voltar" type="reset"><a href="services.html">Voltar</a></button>
+
+        <script>
+            // Código JavaScript para a interatividade da avaliação
+            const stars = document.getElementsByClassName('star');
+            const commentBox = document.getElementById('comment');
+            const submitButton = document.getElementById('submit');
+
+            function handleRatingClick(event) {
+                const selectedRating = parseInt(event.target.getAttribute('data-rating'));
+
+                for (let i = 0; i < stars.length; i++) {
+                    if (i < selectedRating) {
+                        stars[i].classList.add('selected');
+                    } else {
+                        stars[i].classList.remove('selected');
+                    }
+                }
+            }
+
+            function handleSubmitClick() {
+                const selectedStars = document.getElementsByClassName('star selected');
+                const rating = selectedStars.length;
+                const comment = commentBox.value;
+
+                // Implemente aqui a lógica para lidar com o envio da avaliação (por exemplo, enviar para o servidor)
+
+                // Limpar campos após o envio (opcional)
+                commentBox.value = '';
+                for (let i = 0; i < stars.length; i++) {
+                    stars[i].classList.remove('selected');
+                }
+
+                // Exibir uma mensagem de sucesso ou redirecionar para outra página (opcional)
+                alert('Avaliação enviada com sucesso!');
+            }
+
+            // Event listeners
+            for (let i = 0; i < stars.length; i++) {
+                stars[i].addEventListener('click', handleRatingClick);
+            }
+
+            submitButton.addEventListener('click', handleSubmitClick);
+        </script>
+
+    </main>
+    <footer></footer>
+</body>
+
+</html>

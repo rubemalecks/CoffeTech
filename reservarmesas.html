@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CoffeeTech</title>
+    <link rel="stylesheet" href="style_reserva.css">
+
+</head>
+
+<body>
+    <header class="logo__coffee">CoffeeTech<img src="assets/logo_coffe.png" alt="logo" width="10%"></header>
+    <h1>Reserva de Mesas</h1>
+
+    <div>
+        <button class="table-button window">Mesa 1 (com Janela)</button>
+        <button class="table-button no-window">Mesa 2 (sem Janela)</button>
+        <button class="table-button window">Mesa 3 (com Janela)</button>
+        <button class="table-button no-window">Mesa 4 (sem Janela)</button>
+        <button class="table-button window">Mesa 5 (com Janela)</button>
+        <button class="table-button no-window">Mesa 6 (sem Janela)</button>
+        <button class="table-button window">Mesa 7 (com Janela)</button>
+
+    </div>
+
+    <div class="calendar">
+        <h2>Calendário</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Domingo</th>
+                    <th>Segunda</th>
+                    <th>Terça</th>
+                    <th>Quarta</th>
+                    <th>Quinta</th>
+                    <th>Sexta</th>
+                    <th>Sábado</th>
+                </tr>
+            </thead>
+            <tbody id="calendar-body">
+                <!-- Os dias do mês serão adicionados dinamicamente aqui -->
+            </tbody>
+        </table>
+    </div>
+
+    <div class="time">
+        <h2>Intervalo de Horas</h2>
+        <label for="start-time">Início:</label>
+        <input type="time" id="start-time">
+        <label for="end-time">Fim:</label>
+        <input type="time" id="end-time">
+    </div>
+
+    <script>
+        const tableButtons = document.querySelectorAll('.table-button');
+        const calendarBody = document.getElementById('calendar-body');
+
+        // Adicionar eventos de clique nos botões de mesa
+        tableButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                tableButtons.forEach(button => {
+                    button.classList.remove('selected');
+                });
+                button.classList.add('selected');
+            });
+        });
+
+        // Gerar o calendário com 30 dias a partir da data atual
+        function generateCalendar() {
+            const today = new Date();
+            let currentDate = new Date();
+            const daysToAdd = 30;
+
+            calendarBody.innerHTML = '';
+
+            for (let i = 0; i < daysToAdd; i++) {
+                const newDate = new Date(currentDate.getFullYear(), currentDate.getMonth(), currentDate.getDate() + i);
+                const day = newDate.getDate();
+                const weekday = newDate.getDay();
+
+                const cell = document.createElement('td');
+                cell.textContent = day;
+                if (weekday === 0 || weekday === 6) {
+                    cell.classList.add('disabled');
+                } else {
+                    cell.addEventListener('click', () => {
+                        calendarBody.querySelectorAll('td').forEach(cell => {
+                            cell.classList.remove('selected');
+                        });
+                        cell.classList.add('selected');
+                    });
+                }
+
+                const currentRow = calendarBody.querySelector(`tr:nth-child(${Math.ceil((i + 1) / 7)})`);
+                if (currentRow) {
+                    currentRow.appendChild(cell);
+                } else {
+                    const newRow = document.createElement('tr');
+                    newRow.appendChild(cell);
+                    calendarBody.appendChild(newRow);
+                }
+            }
+        }
+
+        generateCalendar();
+    </script>
+    <br>
+     <button class="button__voltar" type="reset"><a href="minhasreservas.html">Confirmar</a></button>
+
+     <button class="button__voltar" type="reset"><a href="index.html">Voltar</a></button>
+     
+
+</body>
+
+</html>
